@@ -4,11 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeaderComponent } from './components/header/header.component';
+import { GalleryItemComponent } from './components/gallery-item/gallery-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    GalleryItemComponent,
   ],
   imports: [
     BrowserModule,
@@ -17,4 +19,5 @@ import { HeaderComponent } from './components/header/header.component';
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
