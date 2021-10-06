@@ -6,5 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'] // stylesheet(s)
 })
 export class AppComponent { // here you can add properties and methods (lifecycle-methods)
-  title: string = 'France'; // could be directly used in HTML with: {{ title }}
 }

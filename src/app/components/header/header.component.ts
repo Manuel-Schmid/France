@@ -12,4 +12,10 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void { // runs when the component loads
   }
 
+  title: string = 'France'; // could be directly used in HTML with: {{ title }}
+
+
+  doSomething() {
+    console.log('called')
+  }
 }
