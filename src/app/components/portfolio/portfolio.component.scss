@@ -23,14 +23,22 @@
 section {
   position: absolute;
   top: 100%;
-  height: 100vh;
-  border: 1px solid black;
+  height: 100%;
+  width: 100%;
+  background-color: white;
 
   @for $i from 1 through 4 {
     &:nth-child(#{$i}) {
       top: calc(#{$i} * 100%);
     }
   }
+  // cut this out (just borders)
+  @for $i from 1 through 4 {
+    &:nth-child(#{$i}) {
+      border: 1px solid black;
+    }
+  }
+  // ---^
 }
 
 .home {
@@ -60,7 +68,7 @@ section {
   &::before {
     content: "";
     z-index: 10;
-    background-color: #9EB7D6;
+    background-color: #92AED5;
     width: 100%;
     position: absolute;
     left: 0;

@@ -12,6 +12,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { ParallaxDirective } from './parallax.directive';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 const appRoutes: Routes = [
   { path: '', component: PortfolioComponent },
@@ -33,6 +34,7 @@ const appRoutes: Routes = [
     BrowserModule,
     NgbModule,
     FontAwesomeModule,
+    MDBBootstrapModule.forRoot(),
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],
