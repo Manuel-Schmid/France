@@ -9,9 +9,12 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterModule, Routes } from "@angular/router";
 import { AboutComponent } from './components/about/about.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { PortfolioComponent } from './components/portfolio/portfolio.component';
+import { GalleryComponent } from './components/gallery/gallery.component';
+import { ParallaxDirective } from './parallax.directive';
 
 const appRoutes: Routes = [
-  { path: '', component: HeaderComponent },
+  { path: '', component: PortfolioComponent },
   { path: 'about', component: AboutComponent },
 ]
 
@@ -22,6 +25,9 @@ const appRoutes: Routes = [
     GalleryItemComponent,
     AboutComponent,
     FooterComponent,
+    PortfolioComponent,
+    GalleryComponent,
+    ParallaxDirective,
   ],
   imports: [
     BrowserModule,
