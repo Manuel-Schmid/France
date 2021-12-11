@@ -123,33 +123,38 @@
   }
 }
 
-.section-container {
+.gallery-container {
   position: absolute;
   top: 100%;
-  height: calc(100% - 11vh);
+  height: calc(400% - 11vh);
   width: 100%;
   display: flex;
-  //overflow-x: hidden;
-}
-
-section {
-  z-index: 10;
-  height: 100%;
-  min-width: 100%;
-  //width: 100%;
-  //@for $i from 1 through 1 { // 4
-  //  &:nth-child(#{$i}) {
-  //    top: calc(#{$i} * 100%);
-  //  }
-  //}
-}
-
-section:nth-child(even) {
-  background-color: #080326;
+  overflow-x: hidden;
 }
 
 .gallery-item {
-  background-color: black;
+  position: relative;
+  z-index: 10;
+  height: 89vh;
+  min-width: 100%;
+  background-color: #06021a;
+}
+
+.gallery-item:nth-child(even) {
+  background-color: #0d053b; // 080326
+}
+
+.film-container {
+  background-color: blue;
+  z-index: 10;
+  top: 400%;
+  position: absolute;
+  height: 89vh;
+  width: 100%;
+}
+
+.film-player {
+
 }
 
 .text {
