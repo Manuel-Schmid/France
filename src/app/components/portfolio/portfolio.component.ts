@@ -16,6 +16,8 @@ export class PortfolioComponent implements OnInit {
   @ViewChild('film') film: ElementRef | any;
   safeURL: SafeResourceUrl;
   videoURL = 'https://www.youtube.com/embed/IE5Q6n4cmys?vq=hd1080&rel=0';
+  originalShown = false;
+  private elem: ElementRef | any;
 
   constructor(private router: Router, private renderer: Renderer2, private _sanitizer: DomSanitizer) {
     this.safeURL = this._sanitizer.bypassSecurityTrustResourceUrl(this.videoURL);
@@ -59,6 +61,19 @@ export class PortfolioComponent implements OnInit {
 
   onScrollInto(element: Element): void {
     element.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  unedited() {
+    let elements = document.querySelectorAll('.original')
+    for (let i = 0; i < elements.length; i++) {
+      if(!this.originalShown) this.renderer.setStyle(elements[i], 'z-index', '1');
+      else this.renderer.removeStyle(elements[i], 'z-index');
+    }
+    this.originalShown = !this.originalShown
+  }
+
+  reflection() {
+
   }
 
   ngOnInit(): void {
