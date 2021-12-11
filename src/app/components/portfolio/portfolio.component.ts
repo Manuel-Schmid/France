@@ -11,7 +11,7 @@ export class PortfolioComponent implements OnInit {
 
   // activeMenuItem: 'home' | 'about' | 'resume' | 'skills' | 'contact';
 
-  // @ViewChild('landing') landing: ElementRef | any;
+  @ViewChild('landing') landing: ElementRef | any;
   @ViewChild('gallery') gallery: ElementRef | any;
   @ViewChild('film') film: ElementRef | any;
   safeURL: SafeResourceUrl;
@@ -55,6 +55,10 @@ export class PortfolioComponent implements OnInit {
         this.renderer.setStyle(parent.children[i], 'height', '89vh');
       }
     }
+  }
+
+  onScrollInto(element: Element): void {
+    element.scrollIntoView({ behavior: 'smooth' });
   }
 
   ngOnInit(): void {

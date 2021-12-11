@@ -4,17 +4,18 @@
   </div>
     <ul class="navbar-menu">
       <li class="navbar-menu-item active">
-        <a class="navbar-menu-item-link text-blue text-bold">home</a>
+        <a href="javascript:void(0)" (click)="onScrollInto(landing)" class="navbar-menu-item-link text-blue text-bold">home</a>
       </li>
       <li class="navbar-menu-item">
-        <a class="navbar-menu-item-link text-white text-bold" >gallery</a>
+        <a href="javascript:void(0)" (click)="onScrollInto(gallery_view)" class="navbar-menu-item-link text-white text-bold" >gallery</a>
       </li>
       <li class="navbar-menu-item">
-        <a class="navbar-menu-item-link text-red text-bold">short film</a>
+        <a href="javascript:void(0)" (click)="onScrollInto(film)" class="navbar-menu-item-link text-red text-bold">short film</a>
       </li>
     </ul>
 </div>
 
+<div #landing></div>
 <div id="landing" appParallax [ratio]="-0.1" class="landing"> <!-- -0.2-->
   <div class="landing-page">
     <div class="landing-page-content">
@@ -30,6 +31,7 @@
   </p>
 </div>
 
+<div #gallery_view class="gallery-view"></div>
 <div #gallery id="gallery" class="gallery-container">
   <section id="gallery-item-1" class="gallery-item" ></section>
   <section id="gallery-item-2" class="gallery-item"></section>
