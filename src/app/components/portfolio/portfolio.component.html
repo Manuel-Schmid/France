@@ -4,13 +4,13 @@
   </div>
     <ul class="navbar-menu">
       <li class="navbar-menu-item active">
-        <a href="javascript:void(0)" (click)="onScrollInto(landing)" class="navbar-menu-item-link text-blue text-bold">home</a>
+        <a (click)="onScrollInto(landing)" class="navbar-menu-item-link text-blue text-bold">home</a>
       </li>
       <li class="navbar-menu-item">
-        <a href="javascript:void(0)" (click)="onScrollInto(gallery_view)" class="navbar-menu-item-link text-white text-bold" >gallery</a>
+        <a (click)="onScrollInto(gallery_view)" class="navbar-menu-item-link text-white text-bold" >gallery</a>
       </li>
       <li class="navbar-menu-item">
-        <a href="javascript:void(0)" (click)="onScrollInto(film)" class="navbar-menu-item-link text-red text-bold">short film</a>
+        <a (click)="onScrollInto(film)" class="navbar-menu-item-link text-red text-bold">short film</a>
       </li>
     </ul>
 </div>
@@ -33,7 +33,15 @@
 
 <div #gallery_view class="gallery-view"></div>
 <div #gallery id="gallery" class="gallery-container">
-  <section id="gallery-item-1" class="gallery-item" ></section>
+  <section id="gallery-item-1" class="gallery-item" >
+    <img src="assets/img/camera/provence-libre-edited.png" alt="">
+    <div class="gallery-menu">
+<!--      <a class="gallery-menu-link text-red">story</a>-->
+<!--      <a class="gallery-menu-link text-red">location</a>-->
+      <a class="gallery-menu-link text-red float-left">unedited</a>
+      <a class="gallery-menu-link text-white float-right">reflection</a>
+    </div>
+  </section>
   <section id="gallery-item-2" class="gallery-item"></section>
   <section id="gallery-item-3" class="gallery-item"></section>
   <section id="gallery-item-4" class="gallery-item"></section>

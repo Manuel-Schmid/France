@@ -42,7 +42,7 @@ export class PortfolioComponent implements OnInit {
       for (let i = 0; i < parent.children.length; i++) {
         this.renderer.setStyle(parent.children[i], 'position', 'fixed');
         this.renderer.setStyle(parent.children[i], 'top', '11vh');
-        this.renderer.setStyle(parent.children[i], 'height', '100%');
+        this.renderer.setStyle(parent.children[i], 'height', '89vh'); // 100%
         this.renderer.setStyle(parent.children[i], 'left', ((i * 100) - (Math.round(galleryOffset/3))) +'%');
       }
     } else if (galleryOffset > 1200) { // film player section
