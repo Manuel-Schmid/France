@@ -15,7 +15,7 @@ export class PortfolioComponent implements OnInit {
   @ViewChild('gallery') gallery: ElementRef | any;
   @ViewChild('film') film: ElementRef | any;
   safeURL: SafeResourceUrl;
-  videoURL = 'https://www.youtube.com/embed/IE5Q6n4cmys';
+  videoURL = 'https://www.youtube.com/embed/IE5Q6n4cmys?vq=hd1080&rel=0';
 
   constructor(private router: Router, private renderer: Renderer2, private _sanitizer: DomSanitizer) {
     this.safeURL = this._sanitizer.bypassSecurityTrustResourceUrl(this.videoURL);
