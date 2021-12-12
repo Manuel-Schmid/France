@@ -18,6 +18,7 @@ export class PortfolioComponent implements OnInit {
   videoURL = 'https://www.youtube.com/embed/IE5Q6n4cmys?vq=hd1080&rel=0';
   originalShown = false;
   reflectionShown = false;
+  giInFocus = 0; // hovering over gallery item
   private elem: ElementRef | any;
 
   constructor(private router: Router, private renderer: Renderer2, private _sanitizer: DomSanitizer) {
@@ -39,14 +40,21 @@ export class PortfolioComponent implements OnInit {
     // @ts-ignore
     const parent: HTMLElement = document.getElementById('gallery');
     const galleryOffset = Math.round(window.pageYOffset - (this.gallery.nativeElement.offsetHeight / 4 - (0.11 * this.gallery.nativeElement.offsetHeight / 5)))
-    // console.log(galleryOffset)
+    console.log(galleryOffset)
 
     if (galleryOffset >= 0 && galleryOffset <= 1200) { // gallery section
+      this.giInFocus = this.checkWhichGalleryItem(galleryOffset)
       for (let i = 0; i < parent.children.length; i++) {
         this.renderer.setStyle(parent.children[i], 'position', 'fixed');
         this.renderer.setStyle(parent.children[i], 'top', '11vh');
-        this.renderer.setStyle(parent.children[i], 'height', '89vh'); // 100%
-        this.renderer.setStyle(parent.children[i], 'left', ((i * 100) - (Math.round(galleryOffset/3))) +'%');
+        this.renderer.setStyle(parent.children[i], 'height', '89vh');
+        // if (slowMotion) {
+        //   this.renderer.setStyle(parent.children[i], 'z-index', '' + 1000/(i+1));
+        // }
+        // else {
+        //   this.renderer.removeStyle(parent.children[i], 'z-index');
+          this.renderer.setStyle(parent.children[i], 'left', ((i * 100) - (Math.round(galleryOffset/3))) +'%'); // + 7
+        // }
       }
     } else if (galleryOffset > 1200) { // film player section
       this.renderer.setStyle(parent.children[parent.children.length-1], 'left', '0');
@@ -65,6 +73,7 @@ export class PortfolioComponent implements OnInit {
   }
 
   unedited() {
+    if (!this.giInFocus) return
     let elements = document.querySelectorAll('.original')
     for (let i = 0; i < elements.length; i++) {
       if(!this.originalShown) this.renderer.setStyle(elements[i], 'opacity', '1');
@@ -74,8 +83,11 @@ export class PortfolioComponent implements OnInit {
   }
 
   reflection() {
-    let reflections = document.querySelectorAll('.gallery-content-main-reflection')
-    let images = document.querySelectorAll('.edited')
+    if (this.giInFocus <= 0) return
+    // @ts-ignore
+    let reflections = document.getElementById('gallery-item-'+this.giInFocus).querySelectorAll('.gallery-content-main-reflection')
+    // @ts-ignore
+    let images = document.getElementById('gallery-item-'+this.giInFocus).querySelectorAll('.edited')
     for (let i = 0; i < reflections.length; i++) {
       if(!this.reflectionShown) {
         this.renderer.setStyle(reflections[i], 'opacity', '1');
@@ -89,8 +101,31 @@ export class PortfolioComponent implements OnInit {
     this.reflectionShown = !this.reflectionShown
   }
 
+  checkWhichGalleryItem(galleryOffset: number) : number {
+    switch (true) {
+      case galleryOffset >= -20 && galleryOffset <= 20: {
+        return 1;
+      }
+      case galleryOffset >= 280 && galleryOffset <= 320: {
+        return 2;
+      }
+      case galleryOffset >= 580 && galleryOffset <= 620: {
+        return 3;
+      }
+      case galleryOffset >= 880 && galleryOffset <= 920: {
+        return 4;
+      }
+      case galleryOffset >= 1180 && galleryOffset <= 1220: {
+        return 5;
+      }
+    }
+    return 0
+  }
+
+
   ngOnInit(): void {
   }
+
 }
 
 
