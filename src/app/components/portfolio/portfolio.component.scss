@@ -1,10 +1,10 @@
 .navbar {
+  padding: 0;
   height: 11vh;
   background-color: #1B1E51;
-  padding: 0;
   align-items: inherit;
   position: fixed;
-  width: 100%;
+  width: 100vw;
   z-index: 1000;
 
   &-logo {
@@ -16,7 +16,6 @@
       height: 84%;
       margin-top: 8%;
     }
-
   }
 
   &-menu {
@@ -30,12 +29,31 @@
       width: 10vw;
       text-align: center;
       line-height: 11vh;
+      font-size: 2.8vh; // 2.7vh
 
       &-link {
         cursor: pointer;
       }
     }
+  }
+  @media (min-width: 720px) and (max-width: 1140px){
+    &-menu {
+      &-item {
+        width: calc(100vw / 7);
+      }
+    }
+  }
 
+  @media (max-width: 720px) {
+    &-logo {
+      display: none;
+    }
+    &-menu {
+      &-item {
+        width: calc(100vw / 3);
+        font-size: 3vh;
+      }
+    }
   }
 }
 
@@ -137,8 +155,33 @@
   overflow-x: hidden;
 
   .gallery-content {
+    font-size: 3vh;
 
-    &-link {
+    @media (max-width: 1140px) {
+      &-link {
+        width: 100% !important;
+        height: inherit !important;
+        line-height: inherit !important;
+      }
+      &-main {
+        &-image {
+          max-height: 80% !important;
+        }
+      }
+
+      .text-blue {
+        margin-top: 1.5vh;
+      }
+
+      .text-red {
+        bottom: 0;
+        position: absolute;
+      }
+    }
+
+
+      &-link {
+      width: 15%;
       padding: 0;
       cursor: pointer;
       line-height: 89vh;
@@ -146,6 +189,7 @@
     }
 
     &-main {
+      width: 70%;
       padding: 0;
 
       .original {

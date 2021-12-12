@@ -72,18 +72,25 @@ export class PortfolioComponent implements OnInit {
     element.scrollIntoView({ behavior: 'smooth' });
   }
 
-  unedited() {
-    if (!this.giInFocus) return
-    let elements = document.querySelectorAll('.original')
+  unedited(showOriginal : boolean) {
+    if (this.giInFocus <= 0) return
+    this.originalShown = !showOriginal
+    // @ts-ignore
+    let elements = document.getElementById('gallery-item-'+this.giInFocus).querySelectorAll('.original')
     for (let i = 0; i < elements.length; i++) {
-      if(!this.originalShown) this.renderer.setStyle(elements[i], 'opacity', '1');
-      else this.renderer.removeStyle(elements[i], 'opacity');
+      if(!this.originalShown) {
+        this.renderer.setStyle(elements[i], 'opacity', '1');
+      }
+      else {
+        this.renderer.removeStyle(elements[i], 'opacity');
+      }
     }
-    this.originalShown = !this.originalShown
+    this.originalShown = !this.originalShown;
   }
 
-  reflection() {
+  reflection(showReflection : boolean) {
     if (this.giInFocus <= 0) return
+    this.reflectionShown = !showReflection
     // @ts-ignore
     let reflections = document.getElementById('gallery-item-'+this.giInFocus).querySelectorAll('.gallery-content-main-reflection')
     // @ts-ignore
@@ -98,7 +105,7 @@ export class PortfolioComponent implements OnInit {
         this.renderer.removeStyle(images[i], 'opacity');
       }
     }
-    this.reflectionShown = !this.reflectionShown
+    this.reflectionShown = !this.reflectionShown;
   }
 
   checkWhichGalleryItem(galleryOffset: number) : number {
@@ -119,7 +126,21 @@ export class PortfolioComponent implements OnInit {
         return 5;
       }
     }
+    this.resetOptions()
     return 0
+  }
+
+  resetOptions() {
+    let reflections = document.querySelectorAll('.gallery-content-main-reflection')
+    let originals = document.querySelectorAll('.original')
+    let edits = document.querySelectorAll('.edited')
+    for (let i = 0; i < reflections.length; i++) {
+      this.renderer.removeStyle(reflections[i], 'opacity');
+      this.renderer.removeStyle(edits[i], 'opacity');
+      this.renderer.removeStyle(originals[i], 'opacity');
+    }
+    this.reflectionShown = false;
+    this.originalShown = false;
   }
 
 
