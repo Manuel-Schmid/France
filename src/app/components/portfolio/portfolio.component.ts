@@ -143,6 +143,9 @@ export class PortfolioComponent implements OnInit {
     this.originalShown = false;
   }
 
+  turnLogo(pre : number) {
+    this.renderer.setStyle(document.getElementById('logo-circle'), 'transform', 'rotate(' + pre * 360+'deg)')
+  }
 
   ngOnInit(): void {
   }

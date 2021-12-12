@@ -11,10 +11,20 @@
     height: 11vh;
     width: 11vh;
     margin-left: 1vw;
+    display: flex;
 
     &-image {
       height: 84%;
       margin-top: 8%;
+    }
+    .circle {
+      margin-left: 1vw;
+      transition: all 0.5s;
+    }
+    .text {
+      margin-left: 1vw;
+      margin-top: 14%;
+      height: 55%;
     }
   }
 

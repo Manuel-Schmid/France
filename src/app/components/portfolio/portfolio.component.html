@@ -1,6 +1,8 @@
 <div class="navbar">
   <div class="navbar-logo">
-    <img class="navbar-logo-image" src="assets/img/Logo_b2.svg" alt="France Logo">
+<!--    <img class="navbar-logo-image" src="assets/img/Logo_b2.svg" alt="France Logo">-->
+    <img (mouseenter)="turnLogo(1)" (mouseleave)="turnLogo(-1)" id="logo-circle" class="navbar-logo-image circle" src="assets/img/Logo-Circle.svg" alt="France Logo">
+    <img class="navbar-logo-image text" src="assets/img/Logo-Text.svg" alt="France Logo">
   </div>
     <ul class="navbar-menu">
       <li class="navbar-menu-item active">
