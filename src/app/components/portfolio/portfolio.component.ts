@@ -17,6 +17,7 @@ export class PortfolioComponent implements OnInit {
   safeURL: SafeResourceUrl;
   videoURL = 'https://www.youtube.com/embed/IE5Q6n4cmys?vq=hd1080&rel=0';
   originalShown = false;
+  reflectionShown = false;
   private elem: ElementRef | any;
 
   constructor(private router: Router, private renderer: Renderer2, private _sanitizer: DomSanitizer) {
@@ -66,14 +67,26 @@ export class PortfolioComponent implements OnInit {
   unedited() {
     let elements = document.querySelectorAll('.original')
     for (let i = 0; i < elements.length; i++) {
-      if(!this.originalShown) this.renderer.setStyle(elements[i], 'z-index', '1');
-      else this.renderer.removeStyle(elements[i], 'z-index');
+      if(!this.originalShown) this.renderer.setStyle(elements[i], 'opacity', '1');
+      else this.renderer.removeStyle(elements[i], 'opacity');
     }
     this.originalShown = !this.originalShown
   }
 
   reflection() {
-
+    let reflections = document.querySelectorAll('.gallery-content-main-reflection')
+    let images = document.querySelectorAll('.edited')
+    for (let i = 0; i < reflections.length; i++) {
+      if(!this.reflectionShown) {
+        this.renderer.setStyle(reflections[i], 'opacity', '1');
+        this.renderer.setStyle(images[i], 'opacity', '0.3');
+      }
+      else {
+        this.renderer.removeStyle(reflections[i], 'opacity');
+        this.renderer.removeStyle(images[i], 'opacity');
+      }
+    }
+    this.reflectionShown = !this.reflectionShown
   }
 
   ngOnInit(): void {

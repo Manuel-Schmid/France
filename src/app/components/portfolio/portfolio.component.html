@@ -37,26 +37,71 @@
     <div class="gallery-content">
       <div class="row margin-0">
       <a
-        (mouseenter)="unedited()"
-        (mouseleave)="unedited()"
-        class="col-sm-12 col-md-2 gallery-content-link text-red">
+        (mouseenter)="unedited()" (mouseleave)="unedited()"
+        class="col-2 gallery-content-link text-blue">
         <p>unedited</p>
       </a>
-      <div class="col  gallery-content-main">
-        <img class="gallery-content-main-image original" src="assets/img/camera/provence-libre-original.jpg" alt="Provence Libre Original">
+      <div class="col gallery-content-main">
         <img class="gallery-content-main-image edited" src="assets/img/camera/provence-libre-edited.png" alt="Provence Libre Edited">
+        <img class="gallery-content-main-image original" src="assets/img/camera/provence-libre-original.jpg" alt="Provence Libre Original">
+        <p class="gallery-content-main-reflection text-white">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse eum excepturi magnam minima numquam provident repellendus, saepe sint, sit tempora ut vel veritatis? At facere in officiis pariatur sint, voluptatum.
+        </p>
       </div>
       <a
-        (mouseenter)="reflection()"
-        (mouseleave)="reflection()"
-        class="col-sm-12 col-md-2 gallery-content-link text-white">
+        (mouseenter)="reflection()" (mouseleave)="reflection()"
+        class="col-2 gallery-content-link text-red">
         <p>reflection</p>
       </a>
       </div>
     </div>
   </section>
-  <section id="gallery-item-2" class="gallery-item"></section>
-  <section id="gallery-item-3" class="gallery-item"></section>
+  <section id="gallery-item-2" class="gallery-item">
+    <div class="gallery-content">
+      <div class="row margin-0">
+        <a
+          (mouseenter)="unedited()" (mouseleave)="unedited()"
+          class="col-2 gallery-content-link text-blue">
+          <p>unedited</p>
+        </a>
+        <div class="col gallery-content-main">
+          <img class="gallery-content-main-image edited" src="assets/img/camera/rearview-mirror-edited.jpg" alt="Rearview mirror Edited">
+          <img class="gallery-content-main-image original" src="assets/img/camera/rearview-mirror-original.jpg" alt="Rearview mirror Original">
+          <p class="gallery-content-main-reflection text-white">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse eum excepturi magnam minima numquam provident repellendus, saepe sint, sit tempora ut vel veritatis? At facere in officiis pariatur sint, voluptatum.
+          </p>
+        </div>
+        <a
+          (mouseenter)="reflection()" (mouseleave)="reflection()"
+          class="col-2 gallery-content-link text-red">
+          <p>reflection</p>
+        </a>
+      </div>
+    </div>
+  </section>
+  <section id="gallery-item-3" class="gallery-item">
+    <div class="gallery-content">
+      <div class="row margin-0">
+        <a
+          (mouseenter)="unedited()" (mouseleave)="unedited()"
+          class="col-2 gallery-content-link text-blue">
+          <p>unedited</p>
+        </a>
+        <div class="col gallery-content-main">
+          <img class="gallery-content-main-image edited" src="assets/img/camera/sea-stone-edited.png" alt="Rearview mirror Edited">
+          <img class="gallery-content-main-image original" src="assets/img/camera/sea-stone-original.jpg" alt="Rearview mirror Original">
+          <p class="gallery-content-main-reflection text-white">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse eum excepturi magnam minima numquam provident repellendus, saepe sint, sit tempora ut vel veritatis? At facere in officiis pariatur sint, voluptatum.
+          </p>
+        </div>
+        <a
+          (mouseenter)="reflection()" (mouseleave)="reflection()"
+          class="col-2 gallery-content-link text-red">
+          <p>reflection</p>
+        </a>
+      </div>
+    </div>
+  </section>
   <section id="gallery-item-4" class="gallery-item"></section>
   <section id="gallery-item-5" class="gallery-item"></section>
 </div>
