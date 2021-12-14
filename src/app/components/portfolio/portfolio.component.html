@@ -47,7 +47,7 @@
         <img class="gallery-content-main-image edited" src="assets/img/camera/provence-libre-edited.png" alt="Provence Libre Edited">
         <img class="gallery-content-main-image original" src="assets/img/camera/provence-libre-original.jpg" alt="Provence Libre Original">
         <p class="gallery-content-main-reflection text-white">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse eum excepturi magnam minima numquam provident repellendus, saepe sint, sit tempora ut vel veritatis? At facere in officiis pariatur sint, voluptatum.
+          A beautiful sunset I spent at the cliffs of Marseille with my brother. The inscription on the rock says 'Provence Libre' and stems from the conflict between the local citizens and the people of Paris.
         </p>
       </div>
       <a
@@ -69,8 +69,8 @@
         <div class="gallery-content-main">
           <img class="gallery-content-main-image edited" src="assets/img/camera/rearview-mirror-edited.jpg" alt="Rearview mirror Edited">
           <img class="gallery-content-main-image original" src="assets/img/camera/rearview-mirror-original.jpg" alt="Rearview mirror Original">
-          <p class="gallery-content-main-reflection text-white">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse eum excepturi magnam minima numquam provident repellendus, saepe sint, sit tempora ut vel veritatis? At facere in officiis pariatur sint, voluptatum.
+          <p class="gallery-content-main-reflection text-white portrait-image">
+            On the way to France I shot this picture through a sidewindow of our car. I love how the sun reflects in the rearview mirror and creates this warm beam of light.
           </p>
         </div>
         <a
@@ -92,8 +92,8 @@
         <div class="gallery-content-main">
           <img class="gallery-content-main-image edited" src="assets/img/camera/sea-stone-edited.png" alt="Rearview mirror Edited">
           <img class="gallery-content-main-image original" src="assets/img/camera/sea-stone-original.jpg" alt="Rearview mirror Original">
-          <p class="gallery-content-main-reflection text-white">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse eum excepturi magnam minima numquam provident repellendus, saepe sint, sit tempora ut vel veritatis? At facere in officiis pariatur sint, voluptatum.
+          <p class="gallery-content-main-reflection text-white portrait-image">
+            This picture was taken without any sort of preparation. I was just enjoying some time alone on the cliffs and pulled out my phone camera. Because of this I even had to edit my inconveniently placed shoes out of the photo.
           </p>
         </div>
         <a
@@ -104,27 +104,54 @@
       </div>
     </div>
   </section>
-  <section id="gallery-item-4" class="gallery-item"></section>
-  <section id="gallery-item-5" class="gallery-item"></section>
+  <section id="gallery-item-4" class="gallery-item">
+    <div class="gallery-content">
+      <div class="row margin-0">
+        <a
+          (mouseenter)="unedited(true)" (mouseleave)="unedited(false)"
+          class="gallery-content-link text-blue">
+          <p>unedited</p>
+        </a>
+        <div class="gallery-content-main">
+          <img class="gallery-content-main-image edited" src="assets/img/camera/aqua-sea-edited.jpg" alt="Rearview mirror Edited">
+          <img class="gallery-content-main-image original" src="assets/img/camera/aqua-sea-original.jpg" alt="Rearview mirror Original">
+          <p class="gallery-content-main-reflection text-white">
+            My brother and I went diving and swimming in the sea almost every day. At this particular location the water looked very beautiful because the seafloor was covered with small white stones.
+          </p>
+        </div>
+        <a
+          (mouseenter)="reflection(true)" (mouseleave)="reflection(false)"
+          class="gallery-content-link text-red">
+          <p>reflection</p>
+        </a>
+      </div>
+    </div>
+  </section>
+  <section id="gallery-item-5" class="gallery-item">
+    <div class="gallery-content">
+      <div class="row margin-0">
+        <a
+          (mouseenter)="unedited(true)" (mouseleave)="unedited(false)"
+          class="gallery-content-link text-blue">
+          <p>unedited</p>
+        </a>
+        <div class="gallery-content-main">
+          <img class="gallery-content-main-image edited" src="assets/img/camera/salty-stone-edited.jpg" alt="Rearview mirror Edited">
+          <img class="gallery-content-main-image original" src="assets/img/camera/salty-stone-original.jpg" alt="Rearview mirror Original">
+          <p class="gallery-content-main-reflection text-white portrait-image">
+            The surface of the cliff was rough and worn from decades of exposure to the splashing salt water. Illuminated by the warm light of the evening sun, they offer a very special aesthetic.
+          </p>
+        </div>
+        <a
+          (mouseenter)="reflection(true)" (mouseleave)="reflection(false)"
+          class="gallery-content-link text-red">
+          <p>reflection</p>
+        </a>
+      </div>
+    </div>
+  </section>
 </div>
 
 <div #film id="film" class="film-container">
     <iframe class="film-player" [src]='safeURL' allowfullscreen></iframe>
 </div>
-
-
-<!--<section class="x">-->
-<!--  <app-gallery></app-gallery>-->
-<!--</section>-->
-
-<!--<section class="x">-->
-<!--</section>-->
-
-<!--<section class="x">-->
-<!--</section>-->
-
-<!--<section class="home">-->
-<!--  <div class="home-background">-->
-<!--    <img src="assets/img/home-background-test.jfif" alt="home-background" width="100%">-->
-<!--  </div>-->
-<!--</section>-->

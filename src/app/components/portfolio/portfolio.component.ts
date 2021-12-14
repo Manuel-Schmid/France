@@ -42,7 +42,7 @@ export class PortfolioComponent implements OnInit {
     const galleryOffset = Math.round(window.pageYOffset - (this.gallery.nativeElement.offsetHeight / 4 - (0.11 * this.gallery.nativeElement.offsetHeight / 5)))
     console.log(galleryOffset)
 
-    if (galleryOffset >= 0 && galleryOffset <= 1200) { // gallery section
+    if (galleryOffset >= 0 && galleryOffset <= 2400) { // gallery section
       this.giInFocus = this.checkWhichGalleryItem(galleryOffset)
       for (let i = 0; i < parent.children.length; i++) {
         this.renderer.setStyle(parent.children[i], 'position', 'fixed');
@@ -53,10 +53,10 @@ export class PortfolioComponent implements OnInit {
         // }
         // else {
         //   this.renderer.removeStyle(parent.children[i], 'z-index');
-          this.renderer.setStyle(parent.children[i], 'left', ((i * 100) - (Math.round(galleryOffset/3))) +'%'); // + 7
+          this.renderer.setStyle(parent.children[i], 'left', ((i * 100) - (Math.round(galleryOffset/6))) +'%'); // the higher the divisor the slower
         // }
       }
-    } else if (galleryOffset > 1200) { // film player section
+    } else if (galleryOffset > 2400) { // film player section
       this.renderer.setStyle(parent.children[parent.children.length-1], 'left', '0');
     } else { // landing section
       for (let i = 0; i < parent.children.length; i++) {
@@ -113,16 +113,16 @@ export class PortfolioComponent implements OnInit {
       case galleryOffset >= -20 && galleryOffset <= 20: {
         return 1;
       }
-      case galleryOffset >= 280 && galleryOffset <= 320: {
+      case galleryOffset >= 580 && galleryOffset <= 620: {
         return 2;
       }
-      case galleryOffset >= 580 && galleryOffset <= 620: {
+      case galleryOffset >= 1180 && galleryOffset <= 1220: {
         return 3;
       }
-      case galleryOffset >= 880 && galleryOffset <= 920: {
+      case galleryOffset >= 1780 && galleryOffset <= 1820: {
         return 4;
       }
-      case galleryOffset >= 1180 && galleryOffset <= 1220: {
+      case galleryOffset >= 2380 && galleryOffset <= 2420: {
         return 5;
       }
     }

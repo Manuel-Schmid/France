@@ -217,13 +217,18 @@
         transition: all 0.5s;
       }
       &-reflection {
-        opacity: 0;
+        opacity: 1; // 0 !!!
+        max-width: 65vh;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -52%);
         transition: all 0.5s;
       }
+      .portrait-image {
+        max-width: 45vh !important;
+      }
+      //@media (max-width: )
     }
   }
 }
@@ -243,7 +248,7 @@
 .film-container {
   background-color: blue;
   z-index: 10;
-  top: 400%;
+  top: 606%;
   position: absolute;
   height: 89vh;
   width: 100%;
