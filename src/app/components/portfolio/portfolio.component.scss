@@ -1,7 +1,7 @@
 .navbar {
   padding: 0;
   height: 11vh;
-  background-color: #1B1E51;
+  background-color: #161848;
   align-items: inherit;
   position: fixed;
   width: 100vw;
@@ -100,10 +100,6 @@
   max-width: 800px;
   text-align: center;
   padding: 0 40px;
-
-  &-image {
-
-  }
 
   &-description {
     margin: 5px auto auto;
@@ -217,7 +213,7 @@
         transition: all 0.5s;
       }
       &-reflection {
-        opacity: 1; // 0 !!!
+        opacity: 0;
         max-width: 65vh;
         position: absolute;
         top: 50%;
@@ -228,7 +224,11 @@
       .portrait-image {
         max-width: 45vh !important;
       }
-      //@media (max-width: )
+      @media (max-width: 700px) {
+        &-reflection {
+          width: 44vh;
+        }
+      }
     }
   }
 }
@@ -238,17 +238,17 @@
   z-index: 10;
   height: 89vh;
   min-width: 100%;
-  background-color: #06021a;
+  background-color: #050215;;
 }
 
 .gallery-item:nth-child(even) {
-  background-color: #0d053b; // 080326
+  background-color: #08041e; // 080326
 }
 
 .film-container {
-  background-color: blue;
+  background-color: red; // !!!
   z-index: 10;
-  top: 606%;
+  top: 608%;
   position: absolute;
   height: 89vh;
   width: 100%;
