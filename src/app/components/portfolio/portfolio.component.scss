@@ -1,3 +1,7 @@
+body {
+  background-color: #050215;
+}
+
 .navbar {
   padding: 0;
   height: 11vh;
@@ -246,7 +250,7 @@
 }
 
 .film-container {
-  background-color: red; // !!!
+  background-color: #050215; // !!!
   z-index: 10;
   top: 608%;
   position: absolute;
