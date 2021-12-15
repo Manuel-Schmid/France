@@ -9,8 +9,6 @@ import {DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
 })
 export class PortfolioComponent implements OnInit {
 
-  // activeMenuItem: 'home' | 'about' | 'resume' | 'skills' | 'contact';
-
   @ViewChild('landing') landing: ElementRef | any;
   @ViewChild('gallery') gallery: ElementRef | any;
   @ViewChild('film') film: ElementRef | any;
@@ -151,15 +149,14 @@ export class PortfolioComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  highlight(highlight: string, unhighlight1: string, unhighlight2: string) {
+  highlight(active: string, inactive: string, inactive1: string) {
     // @ts-ignore
-    document.getElementById(highlight).classList.add('active')
+    document.getElementById(active).classList.add('active')
     // @ts-ignore
-    document.getElementById(unhighlight1).classList.remove('active')
+    document.getElementById(inactive).classList.remove('active')
     // @ts-ignore
-    document.getElementById(unhighlight2).classList.remove('active')
+    document.getElementById(inactive1).classList.remove('active')
   }
-
 }
 
 
