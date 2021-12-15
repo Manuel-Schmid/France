@@ -43,6 +43,7 @@ export class PortfolioComponent implements OnInit {
     console.log(galleryOffset)
 
     if (galleryOffset >= 0 && galleryOffset <= 2400) { // gallery section
+      this.hideTitle(true)
       this.giInFocus = this.checkWhichGalleryItem(galleryOffset)
       for (let i = 0; i < parent.children.length; i++) {
         this.renderer.setStyle(parent.children[i], 'position', 'fixed');
@@ -57,14 +58,30 @@ export class PortfolioComponent implements OnInit {
         // }
       }
     } else if (galleryOffset > 2400) { // film player section
+      this.hideTitle(true)
       this.renderer.setStyle(parent.children[parent.children.length-1], 'left', '0');
+      this.renderer.setStyle(parent.children[parent.children.length-1], 'position', 'fixed');
+      let topOffset = 11-(Math.round((galleryOffset-2400)/6))
+      this.renderer.setStyle(parent.children[parent.children.length-1], 'top', topOffset + '%'); // (4 * 100)
     } else { // landing section
+      this.hideTitle(false)
       for (let i = 0; i < parent.children.length; i++) {
+        this.renderer.setStyle(document.getElementById('landing'), 'visibility', 'visible');
         this.renderer.setStyle(parent.children[i], 'position', 'relative');
         this.renderer.removeStyle(parent.children[i], 'top');
         this.renderer.removeStyle(parent.children[i], 'left');
         this.renderer.setStyle(parent.children[i], 'height', '89vh');
       }
+    }
+  }
+
+  hideTitle(hide: boolean) {
+    if (hide) {
+      this.renderer.setStyle(document.getElementById('landing'), 'visibility', 'hidden');
+      this.renderer.setStyle(document.getElementById('title'), 'visibility', 'hidden');
+    } else {
+      this.renderer.setStyle(document.getElementById('landing'), 'visibility', 'visible');
+      this.renderer.setStyle(document.getElementById('title'), 'visibility', 'visible');
     }
   }
 

@@ -25,10 +25,10 @@
   </div>
 </div>
 
-<div class="title">
+<div id="title" class="title">
   <img class="title-image" src="assets/img/Logo_b2.svg" alt="Logo France">
   <p class="title-description text-white">
-    This ePortfolio is about my vacations in France in fall 2021. I designed and implemented the website as a part of the Swiss IT schooling organization's Module 152.
+    This ePortfolio is about my vacation in France in fall 2021. I designed and implemented the website as a part of the Swiss IT schooling organization's Module 152.
   </p>
 </div>
 
@@ -39,7 +39,7 @@
       <div class="row margin-0">
       <a
         (mouseenter)="unedited(true)" (mouseleave)="unedited(false)"
-        class="gallery-content-link text-blue">
+        class="gallery-content-link text-blue wide-image-text-left">
         <p>unedited</p>
       </a>
       <div class="gallery-content-main">
@@ -51,7 +51,7 @@
       </div>
       <a
         (mouseenter)="reflection(true)" (mouseleave)="reflection(false)"
-        class="gallery-content-link text-red">
+        class="gallery-content-link text-red wide-image-text-right">
         <p>reflection</p>
       </a>
       </div>
@@ -138,7 +138,7 @@
           <img class="gallery-content-main-image edited" src="assets/img/camera/salty-stone-edited.jpg" alt="Rearview mirror Edited">
           <img class="gallery-content-main-image original" src="assets/img/camera/salty-stone-original.jpg" alt="Rearview mirror Original">
           <p class="gallery-content-main-reflection text-white portrait-image">
-            The surface of the cliff was rough and worn from decades of exposure to the splashing salt water. Illuminated by the warm light of the evening sun, they offer a very special aesthetic.
+            The surface of the cliff was rough and worn from decades of exposure to the splashing salt water. Illuminated by the warm light of the evening sun, it offers a very special aesthetic.
           </p>
         </div>
         <a
@@ -151,6 +151,7 @@
   </section>
 </div>
 
+<div id="cover"></div>
 <div #film id="film" class="film-container">
     <iframe class="film-player" [src]='safeURL' allowfullscreen></iframe>
 </div>
