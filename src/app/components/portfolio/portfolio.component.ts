@@ -28,43 +28,27 @@ export class PortfolioComponent implements OnInit {
   @HostListener('window:scroll', ['$event'])
   onScroll(event: any): void {
     // @ts-ignore
-    if ((window.pageYOffset + this.gallery.nativeElement.offsetHeight / 2) < this.gallery.nativeElement.offsetTop) {
-      console.log("landing")
-      // this.activeMenuItem = 'landing';
-    }
-    // @ts-ignore
-    if ((window.pageYOffset + this.gallery.nativeElement.offsetHeight / 2) >= this.gallery.nativeElement.offsetTop) {
-      console.log("gallery")
-      // this.activeMenuItem = 'gallery';
-    }
-    // @ts-ignore
     const parent: HTMLElement = document.getElementById('gallery');
     const galleryOffset = Math.round(window.pageYOffset - (this.gallery.nativeElement.offsetHeight / 4 - (0.11 * this.gallery.nativeElement.offsetHeight / 5)))
     console.log(galleryOffset)
 
     if (galleryOffset >= 0 && galleryOffset <= 2400) { // gallery section
-      this.hideTitle(true)
+      this.highlight('gallery-link', 'landing-link', 'film-link')
       this.giInFocus = this.checkWhichGalleryItem(galleryOffset)
       for (let i = 0; i < parent.children.length; i++) {
         this.renderer.setStyle(parent.children[i], 'position', 'fixed');
         this.renderer.setStyle(parent.children[i], 'top', '11vh');
         this.renderer.setStyle(parent.children[i], 'height', '89vh');
-        // if (slowMotion) {
-        //   this.renderer.setStyle(parent.children[i], 'z-index', '' + 1000/(i+1));
-        // }
-        // else {
-        //   this.renderer.removeStyle(parent.children[i], 'z-index');
-          this.renderer.setStyle(parent.children[i], 'left', ((i * 100) - (Math.round(galleryOffset/6))) +'%'); // the higher the divisor the slower
-        // }
+        this.renderer.setStyle(parent.children[i], 'left', ((i * 100) - (Math.round(galleryOffset/6))) +'%'); // the higher the divisor the slower the speed
       }
     } else if (galleryOffset > 2400) { // film player section
-      this.hideTitle(true)
+      this.highlight('film-link', 'landing-link', 'gallery-link')
       this.renderer.setStyle(parent.children[parent.children.length-1], 'left', '0');
       this.renderer.setStyle(parent.children[parent.children.length-1], 'position', 'fixed');
       let topOffset = 11-(Math.round((galleryOffset-2400)/6))
       this.renderer.setStyle(parent.children[parent.children.length-1], 'top', topOffset + '%'); // (4 * 100)
     } else { // landing section
-      this.hideTitle(false)
+      this.highlight('landing-link', 'gallery-link', 'film-link')
       for (let i = 0; i < parent.children.length; i++) {
         this.renderer.setStyle(document.getElementById('landing'), 'visibility', 'visible');
         this.renderer.setStyle(parent.children[i], 'position', 'relative');
@@ -165,6 +149,15 @@ export class PortfolioComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  highlight(highlight: string, unhighlight1: string, unhighlight2: string) {
+    // @ts-ignore
+    document.getElementById(highlight).classList.add('active')
+    // @ts-ignore
+    document.getElementById(unhighlight1).classList.remove('active')
+    // @ts-ignore
+    document.getElementById(unhighlight2).classList.remove('active')
   }
 
 }

@@ -190,18 +190,6 @@ body {
       }
     }
 
-    @media (min-width: 1140px) {
-      .wide-image-text {
-        &-left {
-          margin-left: 2%;
-        }
-        &-right {
-          width: 9%;
-          margin-left: -1%;
-        }
-      }
-    }
-
     &-link {
       width: 15%;
       padding: 0;
@@ -299,8 +287,26 @@ body {
   }
 }
 
+@media (min-width: 1140px) {
+  .wide-text {
+    &-left {
+      margin-left: 2%;
+    }
+    &-right {
+      width: 9% !important;
+      margin-left: -1.5%;
+    }
+  }
+}
+
 .margin-0 {
   margin: 0;
 }
 
+.active {
+  text-decoration: underline;
 
+  a {
+    cursor: default;
+  }
+}
