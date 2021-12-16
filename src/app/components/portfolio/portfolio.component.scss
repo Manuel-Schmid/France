@@ -95,7 +95,7 @@ body {
   top: calc(50% + 5.5vh);
   left: 50%;
   transform: translate(-50%,-50%);
-  z-index: 1;
+  z-index: 0;
   width: 100%;
   max-width: 800px;
   text-align: center;
@@ -261,7 +261,7 @@ body {
 
 #cover {
   background-color: #050215;
-  height: 40vh;
+  height: 100vh;
   top: 584%;
   position: absolute;
   width: 100%;
