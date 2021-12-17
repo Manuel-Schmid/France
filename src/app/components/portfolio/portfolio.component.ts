@@ -41,10 +41,10 @@ export class PortfolioComponent implements OnInit {
       }
     } else if (galleryOffset > 2400) { // film player section
       this.highlight('film-link', 'landing-link', 'gallery-link')
-      this.renderer.setStyle(parent.children[parent.children.length-1], 'left', '0');
-      this.renderer.setStyle(parent.children[parent.children.length-1], 'position', 'fixed');
-      let topOffset = 11-(Math.round((galleryOffset-2400)/6))
-      this.renderer.setStyle(parent.children[parent.children.length-1], 'top', topOffset + '%'); // (4 * 100)
+      // this.renderer.setStyle(parent.children[parent.children.length-1], 'left', '0');
+      // this.renderer.setStyle(parent.children[parent.children.length-1], 'position', 'fixed');
+      // let topOffset = 11-(Math.round((galleryOffset-2400)/6))
+      // this.renderer.setStyle(parent.children[parent.children.length-1], 'top', topOffset + '%'); // (4 * 100)
     } else { // landing section
       this.highlight('landing-link', 'gallery-link', 'film-link')
       for (let i = 0; i < parent.children.length; i++) {
