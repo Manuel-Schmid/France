@@ -9,7 +9,7 @@ As a topic for the ePortfolio I have chosen my vacations in the South of France 
 
 ## Docs
 
-A very extensive documentation about the ePortfolio written in german can be found <a href="https://github.com/Manuel-Schmid/France/blob/master/docs/Manuel%20Schmid%20Dokumentation%20ePortfolio%20France.pdf" target="_blank">here</a>.
+A very extensive documentation (in german) about the ePortfolio can be found <a href="https://github.com/Manuel-Schmid/France/blob/master/docs/Manuel%20Schmid%20Dokumentation%20ePortfolio%20France.pdf" target="_blank">here</a>.
 
 ## Video
 
